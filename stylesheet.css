@@ -1,86 +1,52 @@
-:root {
-    --primary: white;
-    --secondary: #5271ff;
-    --hover: #4056b2;
-    --active: #1d3c91;
-    --text-color: white;
-    --text-hover: #dcdcdc;
+body {
+    background:mediumspringgreen;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Flexing */
-.disp-flex {
-    display: flex;
-    flex-direction: column;
+.assignments {
+    display:flex;
+    flex-wrap:wrap;
 }
 
-.disp-row {
-    display: flex;
-    flex-direction: row;
+.assignment {
+    width:22%;
+    padding:10px;
+    margin:10px;
+    padding:20px 10px;
+    background:mediumseagreen;
+    border-radius:10px;
 }
 
-/* General Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+.assignment img {
+    width:200px;
+    margin:10px;
+    border:3px solid black;
+    display:block;
+    margin:auto;
 }
 
-/* Banner and Navigation */
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--secondary);
-    padding: 10px 0;
-    width: 100%;
+.assignment img:hover {
+    border:3px dashed blue;
 }
 
-.banner h1 {
-    font-size: 24px;
-    color: var(--text-color);
-    margin: 0;
+h1 {
+    color:black;
+    text-align:center;
 }
 
-/* Navigation Styles */
-.navigation-box {
-    width: 100%; /* Full width */
-    background-color: var(--secondary); /* Adjust background color */
-    padding: 10px 0; /* Add vertical padding */
+h1:hover {
+    color:blue;
 }
 
-.navigation {
-    display: flex; /* Flex container */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+h2 {
+    text-align:center;
 }
 
-.navigation-list {
-    list-style: none; /* Remove bullet points */
-    margin: 0; /* Reset margins */
-    padding: 0; /* Reset padding */
-    display: flex; /* Align items in a row */
-    gap: 20px; /* Spacing between items */
+a {
+    text-decoration:none;
+    color:black;
 }
 
-.navigation-list li {
-    margin: 0; /* Removing individual margins */
-}
-
-.navigation-list a {
-    text-decoration: none; /* Remove underline */
-    color: var(--text-color); /* Set text color */
-    padding: 10px 15px; /* Add padding inside links */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
-}
-
-.navigation-list a.active {
-    background-color: var(--active); /* Active link background */
-    color: var(--text-color); /* Active link text color */
-}
-
-.navigation-list a:hover {
-    background-color: var(--hover); /* Hover effect */
-    color: var(--text-hiver); /* Hover text color */
+a:hover {
+    color:blue;
 }
