@@ -1,0 +1,65 @@
+#Weibull Analysis
+
+data = c(3.9,4.2,5.4,6.5,7.0,8.8,9.2,11.4,14.3,15.1,15.3,15.5,17.9,
+18.0,19.0,19.0,23.9,24.8,26.0,34.2)
+
+data=
+
+n=length(data)
+library(MASS)
+
+fitdistr(data,"weibull")
+
+par(mfrow=c(1,2)) #show 2 graphs MAC
+
+qqplot(qweibull(seq(.025,.975,by=1/n), 1.83290315, 0.8362528),data)
+lines(c(0,100),c(0,100),col="red")
+
+windows()	#show 2 graphs PC
+
+hist(data,freq=F)
+y=function(x){dweibull(x,1.83290315, 0.8362528)}
+curve(y,add=T)
+
+
+#New Data
+
+data=read.csv("C:\\Users\\stutzm\\Desktop\\data.csv")[,-1]
+
+---------------------------------------------------------------
+
+#Normal
+fitdistr(data,"normal")
+
+qqplot(qnorm(seq(.025,.975,by=1/n), 0.7423318, 0.4223910),data)
+lines(c(0,100),c(0,100),col="red")
+
+windows()	#show 2 graphs PC
+
+hist(data,freq=F)
+y=function(x){dnorm(x, 0.7423318, 0.4223910)}
+curve(y,add=T)
+
+#Exponential
+fitdistr(data,"exponential")
+
+qqplot(qexp(seq(.025,.975,by=1/n), 1.3471065),data)
+lines(c(0,100),c(0,100),col="red")
+
+windows()	#show 2 graphs PC
+
+hist(data,freq=F)
+y=function(x){dexp(x, 1.3471065)}
+curve(y,add=T)
+
+#Gamma
+fitdistr(data,"gamma")
+
+qqplot(qgamma(seq(.025,.975,by=1/n), 2.7713942, 3.7333640),data)
+lines(c(0,100),c(0,100),col="red")
+
+windows()	#show 2 graphs PC
+
+hist(data,freq=F)
+y=function(x){dgamma(x,2.7713942, 3.7333640)}
+curve(y,add=T)

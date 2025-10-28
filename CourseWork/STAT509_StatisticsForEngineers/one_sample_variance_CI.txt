@@ -1,0 +1,7 @@
+one.sample.var = function(data,conf.level)
+{
+n = length(data)
+lower.bound = (n-1)*var(data)/qchisq(1-(1-conf.level)/2,n-1)
+upper.bound = (n-1)*var(data)/qchisq((1-conf.level)/2,n-1)
+return(c(lower.bound,upper.bound))
+}
